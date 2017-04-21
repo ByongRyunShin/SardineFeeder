@@ -10,7 +10,7 @@ public class csMainScript : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		if (GUI.Button (new Rect (2100, 1350, 400, 200), "<html><size=50>밥 밥 밥</size></html>")) 
+		if (GUI.Button (new Rect (2100, 1350, 400, 200), "<size=50>밥 밥 밥</size>")) 
 		{
 			
 			GameObject feed = GameObject.CreatePrimitive (PrimitiveType.Sphere);
@@ -20,13 +20,13 @@ public class csMainScript : MonoBehaviour {
 			feed.AddComponent<Rigidbody> ();
 			//feed.GetComponent<SphereCollider> ().isTrigger = true;
 		}
-		if(GUI.Button(new Rect(1700, 1350, 400, 200), "<html><size=50>갈색 정어리 추가</size></html>")){
+		if(GUI.Button(new Rect(1700, 1350, 400, 200), "<size=50>갈색 정어리 추가</size>")){
 			GameObject prefab = Resources.Load ("Sardine/Prefabs/SardineSkinWithDemoScript") as GameObject;
 			GameObject fish = Instantiate (prefab) as GameObject;
 			Debug.Log ("생성 됏나요");
 			fish.name = "Sardine";
 			fish.transform.SetParent (GameObject.Find ("Main Camera").transform.parent);
-			fish.transform.localScale = new Vector3 (7, 7, 7);
+			fish.transform.localScale = new Vector3 (10, 10, 10);
 			fish.transform.localPosition = new Vector3 (2, 1, 0);
 			fish.transform.localRotation = Quaternion.AngleAxis(90, new Vector3(0, 1, 0));
 			fish.AddComponent<CapsuleCollider> ();
@@ -39,12 +39,12 @@ public class csMainScript : MonoBehaviour {
 			fish.AddComponent<SardineCharacter> ();
 			fish.AddComponent<SardineUserController> ();
 		}
-		if (GUI.Button (new Rect (1300, 1350, 400, 200), "<html><size=50>푸른 정어리 추가</size></html>")) {
+		if (GUI.Button (new Rect (1300, 1350, 400, 200), "<size=50>푸른 정어리 추가</size>")) {
 			GameObject prefab = Resources.Load ("Sardine/Prefabs/Ver1.2.1/SardineSkinWithController") as GameObject;
 			GameObject fish = Instantiate (prefab) as GameObject;
 			fish.name = "Sardine";
 			fish.transform.SetParent (GameObject.Find ("Main Camera").transform.parent);
-			fish.transform.localScale = new Vector3 (7, 7, 7);
+			fish.transform.localScale = new Vector3 (10, 10, 10);
 			fish.transform.localPosition = new Vector3 (2, 1, 0);
 			fish.transform.localRotation = Quaternion.AngleAxis(90, new Vector3(0, 1, 0));
 			fish.AddComponent<CapsuleCollider> ();
